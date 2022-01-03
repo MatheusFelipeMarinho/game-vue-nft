@@ -1,3 +1,10 @@
+<template>
+  <AppHero/>
+  <NewGameButton :newPlayer="newPlayer" @start-new-game="startNewGame" />
+  <GameBoard :cardList="cardList" :status="status" @flip-card="flipCard" />
+  <AppFooter />
+</template>
+
 <script>
 import { ref, watch } from 'vue'
 import createDeck from './features/createDeck'
@@ -104,13 +111,6 @@ export default {
 }
 </script>
 
-<template>
-  <AppHero />
-  <NewGameButton :newPlayer="newPlayer" @start-new-game="startNewGame" />
-  <GameBoard :cardList="cardList" :status="status" @flip-card="flipCard" />
-  <AppFooter />
-</template>
-
 <style>
 html,
 body {
@@ -155,8 +155,8 @@ a:hover {
 
 .game-board {
   display: grid;
-  grid-template-columns: repeat(4, 60px);
-  grid-template-rows: repeat(4, 60px);
+  grid-template-columns: repeat(6, 60px);
+  grid-template-rows: repeat(6, 60px);
   grid-column-gap: 12px;
   grid-row-gap: 12px;
   justify-content: center;
@@ -164,15 +164,15 @@ a:hover {
 
 @media screen and (min-width: 500px) {
   .game-board {
-    grid-template-columns: repeat(4, 90px);
-    grid-template-rows: repeat(4, 90px);
+    grid-template-columns: repeat(6, 90px);
+    grid-template-rows: repeat(6, 90px);
   }
 }
 
 @media screen and (min-width: 600px) {
   .game-board {
-    grid-template-columns: repeat(4, 120px);
-    grid-template-rows: repeat(4, 120px);
+    grid-template-columns: repeat(6, 120px);
+    grid-template-rows: repeat(6, 120px);
   }
 }
 

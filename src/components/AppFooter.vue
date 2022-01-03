@@ -1,3 +1,3 @@
 <template>
-  <footer>Made by <a href="https://www.bencodezen.io">BenCodeZen</a></footer>
+  <footer>Made by <a href="https://www.bencodezen.io">Matheus Carmo</a></footer>
 </template>

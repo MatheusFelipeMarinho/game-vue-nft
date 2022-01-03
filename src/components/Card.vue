@@ -1,3 +1,18 @@
+<template>
+  <div class="card" :class="flippedStyles" @click="selectCard">
+    <div class="card-face is-front">
+      <img
+        class="card-image"
+        :srcset="`/images/${value}@2x.png 2x, /images/${value}.png 1x`"
+        :src="`/images/${value}.png`"
+        :alt="value"
+      />
+      <img v-if="matched" src="/images/checkmark.svg" class="icon-checkmark" />
+    </div>
+    <div class="card-face is-back"></div>
+  </div>
+</template>
+
 <script>
 import { computed } from 'vue'
 
@@ -41,21 +56,6 @@ export default {
   }
 }
 </script>
-
-<template>
-  <div class="card" :class="flippedStyles" @click="selectCard">
-    <div class="card-face is-front">
-      <img
-        class="card-image"
-        :srcset="`/images/${value}@2x.png 2x, /images/${value}.png 1x`"
-        :src="`/images/${value}.png`"
-        :alt="value"
-      />
-      <img v-if="matched" src="/images/checkmark.svg" class="icon-checkmark" />
-    </div>
-    <div class="card-face is-back"></div>
-  </div>
-</template>
 
 <style>
 .card {

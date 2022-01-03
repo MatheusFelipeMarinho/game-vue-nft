@@ -1,3 +1,23 @@
+<template>
+  <button v-if="newPlayer" @click="startNewGame" :class="$style.button">
+    <div :class="$style['button-icon']">
+      <img
+        :class="$style['icon-play']"
+        src="/images/play.svg"
+        alt="Play Icon"
+      /><img
+        :class="$style['icon-ghost']"
+        src="/images/cute-ghost.svg"
+        alt="Cute Ghost"
+      />
+    </div>
+    Iniciar
+  </button>
+  <button v-else @click="startNewGame" :class="$style.button">
+    <img src="/images/restart.svg" alt="Restart Icon" />Reiniciar
+  </button>
+</template>
+
 <script>
 export default {
   props: {
@@ -17,26 +37,6 @@ export default {
   }
 }
 </script>
-
-<template>
-  <button v-if="newPlayer" @click="startNewGame" :class="$style.button">
-    <div :class="$style['button-icon']">
-      <img
-        :class="$style['icon-play']"
-        src="/images/play.svg"
-        alt="Play Icon"
-      /><img
-        :class="$style['icon-ghost']"
-        src="/images/cute-ghost.svg"
-        alt="Cute Ghost"
-      />
-    </div>
-    Start Game
-  </button>
-  <button v-else @click="startNewGame" :class="$style.button">
-    <img src="/images/restart.svg" alt="Restart Icon" />Restart Game
-  </button>
-</template>
 
 <style module>
 .button {
