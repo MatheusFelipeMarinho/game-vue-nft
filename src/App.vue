@@ -66,7 +66,7 @@ export default {
     }
 
     watch(matchesFound, currentValue => {
-      if (currentValue === 8) {
+      if (currentValue === 15) {
         launchConfetti()
       }
     })
